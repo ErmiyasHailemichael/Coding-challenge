@@ -40,10 +40,10 @@ const addOne = (num) => {
 }
 console.log(addOne(-5));
 
-// function addOne(num) {
-//     return num + 1;
-// }
-// console.log(addOne(-5));
+function addOne(num) {
+    return num + 1;
+}
+console.log(addOne(-5));
 
 /*-----------------------------------------------------------------
 Challenge: 02-addTwoNumbers
@@ -90,6 +90,14 @@ const sumNumbers = (arr) => {
     return sum;
 }
 console.log(sumNumbers([2, 10, -5]));
+
+// function sumNumbers(arr) {
+//     let sum = 0;
+//     for (let i = 0; i < arr.length; i++) {
+//         sum += arr[i];
+//     }
+//     return sum;
+// }
 /*-----------------------------------------------------------------
 Challenge: 04-addList
 Difficulty: Basic
@@ -155,6 +163,19 @@ range(5,2) //=> "First argument must be less than second"
 // Your solution for 06-range here:
 
 const range = (num1, num2) => {
+    let arr = [];
+    if (num1 > num2) {
+        return 'First argument must be less than second';
+    } else {
+        for (let i = num1; i < num2; i++) {
+            arr.push(i);
+        }
+    }
+    return arr;
+}
+console.log(range(1, 4));
+
+function range(num1, num2) {
     let arr = [];
     if (num1 > num2) {
         return 'First argument must be less than second';

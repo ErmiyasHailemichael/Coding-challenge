@@ -260,3 +260,186 @@ function formatWithPadding(num, str, num2) {
     }
 }
 console.log(formatWithPadding(123, '0', 5));
+
+/*-----------------------------------------------------------------
+Challenge: 11-isPalindrome
+Difficulty: Intermediate
+Prompt:
+- Write a function called isPalindrome that accepts a single string argument, then returns true or false depending upon whether or not the string is a palindrome.
+- A palindrome is a word or phrase that are the same forward or backward.
+- Casing and spaces are not included when considering whether or not a string is a palindrome.
+- If the length of the string is 0 or 1, return true.
+Examples:
+isPalindrome('SEI Rocks'); //=> false
+isPalindrome('rotor'); //=> true
+isPalindrome('A nut for a jar of tuna'); //=> true
+isPalindrome(''); //=> true
+-----------------------------------------------------------------*/
+// Your solution for 11-isPalindrome here:
+function isPalindrome(str) {
+    let str2 = str.toLowerCase().replace(/\s/g, '');
+    let str3 = str2.split('').reverse().join('');
+    if (str2 === str3) {
+        return true;
+    } else {
+        return false;
+    }
+}
+console.log(isPalindrome('A nut for a jar of tuna'));
+
+/*-----------------------------------------------------------------
+Challenge: 12-hammingDistance
+Difficulty: Intermediate
+Prompt:
+In information theory, the hamming distance refers to the count of the differences between two strings of equal length.  It is used in computer science for such things as implementing "fuzzy search"  capability.
+- Write a function named hammingDistance that accepts two arguments which are both strings of equal length.
+- The function should return the count of the symbols (characters, numbers, etc.) at the same position within each string that are different.
+- If the strings are not of the same length, the function should return NaN.
+Examples:
+hammingDistance('abc', 'abc'); //=> 0
+hammingDistance('a1c', 'a2c'); //=> 1
+hammingDistance('!!!!', '****'); //=> 4
+hammingDistance('abc', 'ab'); //=> NaN
+-----------------------------------------------------------------*/
+// Your solution for 12-hammingDistance here:
+
+
+/*-----------------------------------------------------------------
+Challenge: 13-mumble
+Difficulty: Intermediate
+Prompt:
+- Write a function called mumble that accepts a single string argument.
+- The function should return a string that has each character repeated the number of times according to its position within the string arg.  In addition, each repeated section of characters should be separated by a hyphen (-).
+- Examples describe it best..
+Examples:
+mumble('X'); //=> 'X'
+mumble('abc'); //=> 'a-bb-ccc'
+mumble('121'); //=> '1-22-111'
+mumble('!A 2'); //=> '!-AA-   -2222'
+-----------------------------------------------------------------*/
+// Your solution for 13-mumble here:
+
+
+/*-----------------------------------------------------------------
+Challenge: 14-fromPairs
+Difficulty: Intermediate
+Prompt:
+- Write a function named fromPairs that creates an object from an array containing nested arrays.
+- Each nested array will have two elements representing key/value pairs used to create key/value pairs in an object to be returned by the function.
+- If a key appears in multiple pairs, the rightmost pair should overwrite previous the previous entry in the object.
+Examples:
+fromPairs([ ['a', 1], ['b', 2], ['c', 3] ]) //=> { a: 1, b: 2, c: 3 }
+fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) //=> { name: "Sally", age: 24 }
+-----------------------------------------------------------------*/
+// Your solution for 14-fromPairs here:
+
+
+/*-----------------------------------------------------------------
+Challenge: 15-mergeObjects
+Difficulty:  Intermediate
+Prompt:
+- Write a function named mergeObjects that accepts at least two objects as arguments, merges the properties of the second through n objects into the first object, then finally returns the first object.
+- If any objects have the same property key, values from the object(s) later in the arguments list should overwrite earlier values.
+Examples:
+mergeObjects({}, {a: 1});  //=> {a: 1} (same object as first arg)
+mergeObjects({a: 1, b: 2, c: 3}, {d: 4});  //=> {a: 1, b: 2, c: 3, d: 4}
+mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  //=> {a: 1, b: 22, c: 3, d: 44}
+-----------------------------------------------------------------*/
+// Your solution for 15-mergeObjects here:
+
+
+/*-----------------------------------------------------------------
+Challenge: 16-findHighestPriced
+Difficulty:  Intermediate  
+Prompt:
+- Write a function named findHighestPriced that accepts a single array of objects.
+- The objects contained in the array are guaranteed to have a price property holding a numeric value.
+- The function should return the object in the array that has the largest value held in the price property.
+- If there's a tie between two or more objects, return the first of those objects in the array.
+- Return the original object, not a copy.
+- DO NOT mutate the array, i.e., do not sort it
+Examples:
+findHighestPriced([
+  { sku: 'a1', price: 25 },
+  { sku: 'b2', price: 5 },
+  { sku: 'c3', price: 50 },
+  { sku: 'd4', price: 10 }
+]);
+//=> { sku: 'c3', price: 50 } 
+findHighestPriced([
+  { sku: 'a1', price: 25 },
+  { sku: 'b2', price: 50 },
+  { sku: 'c3', price: 50 },
+  { sku: 'd4', price: 10 }
+]);
+//=> { sku: 'b2', price: 50 }
+-----------------------------------------------------------------*/
+// Your solution for 16-findHighestPriced here:
+
+
+/*-----------------------------------------------------------------
+Challenge: 17-mapArray
+Difficulty:  Intermediate
+Prompt:
+The goal is of this challenge is to write a function that performs the functionality of JavaScript's Array.prototype.map method.
+- Write a function named mapArray that accepts two arguments: a single array and a callback function.
+- The mapArray function should return a new array of the same length as the array argument.
+- The mapArray function should iterate over each element in the array (first arg).  For each iteration, invoke the callback function (2nd arg), passing to it as arguments, the current element and its index.  Whatever is returned by the callback function should be included in the new array at the index of the current iteration.
+Examples:
+mapArray( [1, 2, 3], function(n) {
+  return n * 2;
+} );
+//=> [2, 4, 6]  (a new array)
+mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
+  return `${i + 1} - ${f}`;
+} );
+//=> ["1 - rose", "2 - tulip", "3 - daisy"]
+-----------------------------------------------------------------*/
+// Your solution for 17-mapArray here:
+
+
+/*-----------------------------------------------------------------
+Challenge: 18-reduceArray
+Difficulty:  Intermediate
+Prompt:
+The goal is of this challenge is to write a function that performs the functionality of JavaScript's Array.prototype.reduce method.
+- Write a function named reduceArray that accepts three arguments: (1) an array; (2) a callback function; and (3) a value used as the initial value of the "accumulator".
+- The reduceArray function should return whatever is returned by the callback function on the last iteration.
+- The reduceArray function should iterate over each element in the array (first arg).  For each iteration, invoke the callback function (2nd arg), passing to it three arguments: (1) the "accumulator", which is the value returned by the callback during the previous iteration; (2) the  current element; and (3) the index of the current iteration.
+- On the first iteration, provide the third argument provided to reduceArray as the first argument when invoking the callback, then for subsequent iterations, provide the value returned by the callback during the previous iteration.
+Examples:
+reduceArray( [1, 2, 3], function(acc, n) {
+  return acc + n;
+}, 0);
+//=> 6
+reduceArray( [1, 2, 3], function(acc, n, i) {
+  return acc + n + i;
+}, 0);
+//=> 9
+reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
+  acc[v] = acc[v] ? acc[v] + 1 : 1;
+  return acc;
+}, {} );
+//=> {"Yes": 2, "No": 1, "Maybe": 1}
+-----------------------------------------------------------------*/
+// Your solution for 18-reduceArray here:
+
+
+/*-----------------------------------------------------------------
+Challenge: 19-flatten
+Difficulty:  Intermediate
+Prompt:
+- Write a function named flatten that accepts a single array that may contain nested arrays and returns a new "flattened" array.
+- A flattened array is an array that contains no nested arrays.
+- Arrays maybe nested at any level.
+- If any of the arrays have duplicate values those duplicate values should be present in the returned array.
+- The values in the new array should maintain their ordering as shown in the examples below.
+Hint:
+- This assignment provides an excellent opportunity to use recursion (a function that calls itself).  It can also be solved by using an inner function.
+Examples:
+flatten( [1, [2, 3]] );
+//=> [1, 2, 3]  (a new array) 
+flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
+//=> [1, 2, 3, 4, 1, 'a', 'b', 'c']
+-----------------------------------------------------------------*/
+// Your solution for 19-flatten here:
